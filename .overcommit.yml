@@ -1,0 +1,34 @@
+verify_signatures: false
+
+PreCommit:
+  BundleCheck:
+    enabled: true
+
+  CapitalizedSubject:
+    enabled: false
+
+  ExecutePermissions:
+    enabled: true
+
+  LocalPathsInGemfile:
+    enabled: true
+
+  RuboCop:
+    command: ['bundle', 'exec', 'rubocop', '--force-exclusion']
+    enabled: true
+    on_warn: fail
+
+  ShellCheck:
+    enabled: true
+
+  YamlSyntax:
+    enabled: true
+
+PostCheckout:
+  ALL:
+    quiet: true
+
+PrePush:
+  RSpec:
+    command: ['bundle', 'exe', 'rspec']
+    enabled: true

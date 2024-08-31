@@ -1,0 +1,22 @@
+AllCops:
+  Include:
+    - '**/*.rake'
+    - '**/*.rb'
+    - '**/*.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+  NewCops: enable
+  SuggestExtensions:
+    rubocop-rake: false
+    rubocop-rspec: false
+  TargetRubyVersion: 3.3
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
+
+Metrics/MethodLength:
+  Max: 15
